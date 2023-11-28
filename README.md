@@ -1,58 +1,93 @@
-# UOC Boilerplate
+# README Y WEB EN DESARROLLO
 
-UOC Boilerplate is a starter template for the HTML and CSS Tools courses from the [Master's Program in Multimedia Applications](https://estudis.uoc.edu/ca/masters-universitaris/aplicacions-multimedia/presentacio) and the [Master's Program in Web App and Website Development](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) at the [Universitat Oberta de Catalunya](https://www.uoc.edu). It aims to provide a basic, modern frontend web development starter pack based on Parcel and including a Sass compiler, an ES6 transpiler, minifiers, an image transformer, and development tools.
+# Web Club de Tenis
 
-This is the 3.x version of UOC Boilerplate, available since the UOC 2020-2 semester.
+Web de un club de tenis (ficticio) comarcal en la que se anuncian los próximos partidos de la liga, actividades tales como extraescolares para niños, participantes de la liga, etc...
 
-## Requirements
+Esta web se ha creado para la práctica 2 de la asignatura **Herramientas HTML y CSS II** del Máster de desarrollo de aplicaciones y sitios web de la [**UOC**](https://estudis.uoc.edu/ca/masters-universitaris/aplicacions-multimedia/presentacio).
+
+Los requisitos de la práctica eran los siguientes:
+
+-   Usar el Boilerplate propio del Máster el cual se puede encontrar en [Boilerplate UOC](https://github.com/uoc-advanced-html-css/uoc-boilerplate)
+-   Instalar dependencias externas con NPM tales como Fotnawesome, Bootstrap, y otras que se consideren oportunas
+-   Usar el preprocesador SASS
+-   Usar Bootstrap 5
+-   Usar Flex
+-   Usar CSS Grid con @supports para navegadores que no soportan CSS Grid
+-   Uso de pseudoclases funcionales
+-   Uso de container queries y capas de cascada
+-   Diseño responsive
+-   Aplicación de de metodologías y guías de estilo, adecuación a estándares y calidad del código en general
+-   Instalación y configuración de StyleLint
+-   Publicación en Github y deployment en Netlify
+
+**Requisitos de la documentación**
+
+-   Documentar todo el proceso de desarrollo
+-   Justificación del uso de las pseudoclases funcionales y las capas de cascada.
+-   Explicación de las container queries utilizadas
+-   Justificación de las decisiones tomadas en el desarrollo, dependencias instaladas y personalización, problemas resueltos.
+-   Justificación de la elección de la metodología y/o guía de estilo y descripción de la aplicación de los criterios elegidos
+
+## ¿Qué es un Boilerplate?
+
+Un Boilerplate es un conjunto de código preescrito que se utiliza como base en múltiples lugares.
+
+En el desarrollo web, un "boilerplate" puede incluir la estructura HTML básica, archivos de estilo CSS y scripts JavaScript comunes.
+
+**UOC Boilerplate** es una plantilla de inicio para la asignatura de **Herramientas HTML y CSS II** del [Máster de desarrollo de aplicaciones y sitios web](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) de la [Universitat Oberta de Catalunya](https://www.uoc.edu). Su objetivo es proporcionar un paquete básico y moderno para el desarrollo web frontend basado en Parcel e incluye un compilador de Sass, un transpilador de ES6, minificadores, un transformador de imágenes y herramientas de desarrollo.
+
+Esta es la versión 3.x de UOC Boilerplate, disponible desde el segundo semestre del 2020.
+
+## Requisitos
 
 [Node.js](http://nodejs.org/) >= 14.15.x
 
-## Getting started
+## Como ver la web (Getting started)
 
-Clone this repository with `git clone`, or download a .zip file using the top right green button.
+Clonar este repositorio con `git clone`, o descarga el archivo .zip usando el botón verde que se encuentra arriba a la derecha.
 
-Using the Terminal, navigate to the project folder and run `npm install`.
+Una vez en tu ordenador, abre el terminal y dirígete a a la carpeta del proyecto. Ejecuta `npm install` y despues `npm run dev` y se abrirá la web en el navegador.
 
-## Features
+## Características
 
-- Uses [Parcel v2](https://parceljs.org) module bundler.
-- NPM scripts for fast development and production build (see Commands below).
+-   Se usa el **module bundler** Parcel en su versión 2.
+-   Incluye scripts de NPM para un desarrollo rápido y construcción de proyecto. scripts for fast development and production build (see Commands below).
 
-### Stylesheets
+### Estilos CSS
 
-- [Sass/SCSS](https://sass-lang.com) to CSS compilation.
-- Minification and optimization of CSS files on production builds with [`cssnano`](https://github.com/cssnano/cssnano) (`@parcel/optimizer-cssnano`).
-- [PostCSS](https://postcss.org/) features:
-  - Transpile modern CSS with [`postcss-preset-env`](https://preset-env.cssdb.org/features).
-  - Automatically add CSS prefix to unsupported properties with [`autoprefixer`](https://autoprefixer.github.io/).
+-   Se usa [Sass/SCSS](https://sass-lang.com) para la compilación de CSS.
+-   Se Minifica y optimizan los archivos de css con [`cssnano`](https://github.com/cssnano/cssnano) (`@parcel/optimizer-cssnano`).
+-   Se incluye PostCSS. Características de [PostCSS](https://postcss.org/):
+    -   Transpilación de CSS moderno con [`postcss-preset-env`](https://preset-env.cssdb.org/features).
+    -   Se añaden automáticamente prefijo de CC para las propiedades no soportadas con [`autoprefixer`](https://autoprefixer.github.io/).
 
 ### HTML
 
-- Minification and optimization of CSS files on production builds [`htmlnano`](https://github.com/posthtml/htmlnano) (`@parcel/optimizer-htmlnano`).
-- [PostHTML](https://github.com/posthtml/posthtml) features:
-  - Include partial HTML files with [`posthtml-include`](https://github.com/posthtml/posthtml-include).
+-   Se Minifica y optimizan los archivos de HTML al compilar la versión de producción con [`htmlnano`](https://github.com/posthtml/htmlnano) (`@parcel/optimizer-htmlnano`).
+-   Se incluye [PostHTML](https://github.com/posthtml/posthtml) con sus características:
+    -   Inclusión de archivos parciales con <include> [`posthtml-include`](https://github.com/posthtml/posthtml-include).
 
 ### Scripts
 
-- Allow for modern JavaScript (ES201x/ES8/ES7/ES6…) which is automatically transpiled to ES5 and minifed in production builds, with [Babel](https://babeljs.io/).
+-   Permite transpilación automática de JavaScript moderno (ES201x/ES8/ES7/ES6…) a ES5 así como minificación en la compliación de la versión para producción, con [Babel](https://babeljs.io/).
 
-### Images
+### Imágenes
 
-- Image transformation with [`@parcel/transformer-image`](https://parceljs.org/recipes/image/) (based on [`sharp`](https://sharp.pixelplumbing.com/)).
+-   Conversión de imágnenes con [`@parcel/transformer-image`](https://parceljs.org/recipes/image/) (basado en [`sharp`](https://sharp.pixelplumbing.com/)).
 
-### Development
+### Desarrollo
 
-- Development server launch and live reloading on file changes.
-- Friendly error reporting.
+-   Servidor de prueba con refresco automático con cada guardado de cambios en archivos.
+-   Reporte de errores fácil de entender.
 
-## How to use this boilerplate
+## Como usar el Boilerplate
 
-Content lives inside the `src/` folder. If you do not want to change the configuration or are unsure about what you are doing, do not edit files outside the `src/` folder.
+El contenido de la web tiene que ir en la carpeta `src`. No cambiar la estructura ni los archivos de dicha carpeta a no ser que se quiera cambiar la configuración o que sepas lo que estás haciendo.
 
-Always run the following commands during the development stage and for production builds. Please note that it is expected that all projects built with this boilerplate are compiled using `npm run build` before they are published.
+Para compilar una versión funcional de la web optimizada ejecutar `npm run build`. Una vez ejecutado el comando la web y todos sus archivos estarán ubicados en la carpeta `dist`
 
-### Commands
+### Commandos
 
 | Command         | Description                                                                                                                                                                                                                                                                                                                                                         |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -61,8 +96,10 @@ Always run the following commands during the development stage and for productio
 | `npm run clean` | Deletes the current `/dist` folder and cache folders.                                                                                                                                                                                                                                                                                                               |
 | `npm run test`  | Displays a success message if everything is working as expected.                                                                                                                                                                                                                                                                                                    |
 
-## Need help? / Want to help out?
+## Créditos y mas información
 
-Feel free to create a [new issue](https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues/new/) or drop me a line at jorditarrida@uoc.edu.
+Todos los créditos de este Boilerplate y sus funciones (incluyendo la traducción/adaptación de este README) pertenecen a [Jordi Tarrida](https://github.com/jorditarrida)
 
-Are you using this Boilerplate for your projects or for educational purposes? I would love to hear about it!
+Todos los archivos HTML y CSS de la web han sido creados por [Pedro Blanch](https://github.com/dryant)
+
+Aunque se ha tenido especial cuidado en la elección de imágenes libres de derechos, si alguna imagen infringe algún derecho, por favor comunícamelo y la retiro inmediatamente.

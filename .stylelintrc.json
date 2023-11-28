@@ -1,0 +1,32 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "indentation": 4,
+        "no-missing-end-of-source-newline": true,
+        "selector-type-case": "lower",
+        "property-case": "lower",
+        "string-quotes": "single",
+        "declaration-block-trailing-semicolon": "always",
+        "max-line-length": 120,
+        "selector-attribute-quotes": "always",
+        "property-order": [
+            "required",
+            "content",
+            "position",
+            "display",
+            "flex",
+            "align",
+            "size",
+            "color",
+            "background",
+            "font",
+            "text",
+            "spacing",
+            "border",
+            "animation",
+            "other"
+        ],
+        "comment-empty-line-before": null,
+        "comment-whitespace-inside": null
+    }
+}

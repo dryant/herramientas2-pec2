@@ -1,0 +1,25 @@
+{
+    "tabWidth": 4,
+    "useTabs": false,
+    "htmlWhitespaceSensitivity": "ignore",
+    "singleQuote": false,
+    "printWidth": 120,
+    "semi": true,
+    "wrapAttributes": "preserve",
+    "entityMap": {
+        "lt": "<",
+        "gt": ">",
+        "amp": "&",
+        "quot": "\"",
+        "apos": "'"
+    },
+    "attributeGroups": {
+        "order": ["required", "semantics", "style", "events", "other"],
+        "separators": {
+            "before": "always",
+            "after": "always"
+        }
+    },
+    "commentFraming": true,
+    "endOfLine": "auto"
+}
