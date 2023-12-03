@@ -1,149 +1,17 @@
-/*********************************************
-*          Estilos RESET
-**********************************************/
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html,
 body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol,
-ul {
-    list-style: none;
-}
-blockquote,
-q {
-    quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: "";
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/************* Fin RESET *************/
-
-body {
+main,
+header {
     font-family: $font-family-sans;
 }
 
 main {
     background-image: url("../images/tenis-pista.jpg");
+    background-color: $cesped;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    // height: 100vh;
+    min-height: 100%;
 }
 
 /*********************************************
@@ -153,15 +21,24 @@ main {
     max-width: 1280px;
     margin: 40px auto;
     height: calc(
-        100vh - 180px
+        100% - 180px
     ); // El 100% del alto de la ventana menos el header y el footer (70px + 10px de margen y 60px + 10px de margen)
 }
 .window__poster {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
     gap: 20px;
     height: 100%;
+}
+@supports not (display: grid) {
+    .window__poster {
+        display: inline-block;
+    }
+
+    .window__poster > * {
+        display: inline-block;
+    }
 }
 .card-comida,
 .card-clases,
@@ -170,17 +47,19 @@ main {
     line-height: 2rem;
     font-size: $p-size;
 }
-.card-title {
+.card-subtitle {
     line-height: 2.5rem;
     grid-row: 1/2;
     grid-column: 2/5;
     font-family: $h1-f;
     font-weight: $h1-w;
-    font-size: $h1-size;
+    font-size: $h2-size-tablet;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $pista;
+    padding: 50px;
 }
 .card-inscripciones {
     background-color: $arena;
@@ -219,6 +98,7 @@ main {
     color: $arena;
     font-weight: $h2-w;
     font-family: $font-family-header;
+    padding: 25px;
 }
 .card-inscripciones__title,
 .card-comida__title,
@@ -258,11 +138,12 @@ main {
     padding-top: 25px;
 }
 .header__logo {
+    display: inline;
     font-size: $h2-size;
     font-weight: $h1-w;
     font-family: $font-family-header;
     font-style: italic;
-    border-bottom: #000 dotted 1px;
+    // border-bottom: #000 dotted 1px;
     color: $cesped;
     padding-bottom: 0px;
     margin-bottom: 20px;
@@ -286,6 +167,15 @@ main {
 **********************************************/
 
 @media (max-width: 980px) {
+    main {
+        height: inherit;
+    }
+    .window {
+        height: inherit;
+    }
+    .window__poster {
+        grid-template-rows: repeat(4, auto);
+    }
     .header__content {
         display: flex;
         justify-content: space-between;
@@ -293,9 +183,6 @@ main {
         max-width: 100%;
         margin: auto;
         padding: 20px 25px 0;
-    }
-    .window__poster {
-        grid-template-rows: repeat(4, 1fr);
     }
     .card-title {
         grid-row: 1/2;
@@ -346,6 +233,9 @@ main {
         justify-content: center;
         align-items: center;
     }
+    .header__logo {
+        font-size: 20px;
+    }
     .header__nav {
         padding-bottom: 30px;
     }
@@ -386,73 +276,3 @@ main {
 }
 
 /************* Fin MOVIL *************/
-/*********************************************
-*          Estilos MEMBERS
-**********************************************/
-
-.page-members {
-    max-width: 1280px;
-    margin: 0 auto;
-    background-color: $white;
-    height: 100%;
-    padding: 50px;
-}
-.page-members__title {
-    font-size: $h2-size;
-    font-weight: $h1-w;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 40px;
-}
-.galeria {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(33.33% - 60px);
-}
-
-.card__image {
-    width: 100%;
-    height: 300px;
-}
-
-.card__title {
-    font-weight: bold;
-    text-align: center;
-    font-size: $h2-size-tablet;
-    margin: 20px auto 5px;
-}
-
-.card__description {
-    text-align: center;
-    max-height: 3em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.5;
-    font-size: $p-size;
-}
-
-/*********************************************
-*          Estilos Estilos Movil
-**********************************************/
-@media (max-width: 480px) {
-    .card {
-        width: calc(50% - 5px);
-    }
-    .card__image {
-        height: 175px;
-        width: 100%;
-    }
-    .card__title {
-        font-size: 20px;
-    }
-}
-/************* Fin Estilos Movil *************/
-
-/************* Fin MEMBERS *************/

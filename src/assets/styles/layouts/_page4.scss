@@ -1,0 +1,19 @@
+.bg-white {
+    background-color: $white;
+}
+.page4-title {
+    text-align: center;
+    padding: 20px;
+    font-size: $h2-size;
+}
+.pong-content {
+    background-color: black;
+}
+.page4-text {
+    text-align: center;
+    margin: 10px auto 45px;
+    line-height: 1.8;
+}
+canvas#game {
+    width: 100%;
+}

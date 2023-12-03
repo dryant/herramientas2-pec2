@@ -1,0 +1,71 @@
+/*********************************************
+*          Estilos MEMBERS
+**********************************************/
+
+.page-members {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: $white;
+    height: 100%;
+    padding: 50px;
+}
+.page-members__title {
+    font-size: $h2-size;
+    font-weight: $h1-w;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.galeria {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 60px);
+}
+
+.card__image {
+    width: 100%;
+    height: 300px;
+}
+
+.card__title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.card__description {
+    text-align: center;
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    font-size: 14px;
+}
+
+/*********************************************
+*          Estilos Estilos Movil
+**********************************************/
+@media (max-width: 480px) {
+    .card {
+        width: calc(50% - 5px);
+    }
+    .card__image {
+        height: 175px;
+        width: 100%;
+    }
+    .card__title {
+        font-size: 20px;
+    }
+}
+/************* Fin Estilos Movil *************/
+
+/************* Fin MEMBERS *************/

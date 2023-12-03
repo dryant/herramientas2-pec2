@@ -1,43 +1,41 @@
 <!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-        <!-- do not remove this line! -->
-        <title>Club de tenis Al-Gandul</title>
-    </head>
+<html lang="es">
+    <include src="views/head.html"></include>
     <body>
+        <include src="views/header.html"></include>
         <main>
-            <include src="views/header.html"></include>
+            <div class="container">
+                <div class="row">
+                    <div class="window">
+                        <div class="window__poster">
+                            <div class="card-inscripciones">
+                                <h2 class="card-inscripciones__title">Inscripciones a la próxima temporada abiertas</h2>
+                                <p class="card-inscripciones__text">
+                                    Si te gusta el tenís y eres de la comarca de Al-Gandul ínscribete aquí
+                                </p>
+                            </div>
+                            <div class="card-clases">
+                                <h2 class="card-clases__title">Clases particulares para niños de 8-14 años</h2>
+                            </div>
+                            <div class="card-comida">
+                                <h2 class="card-comida__title">Comida fin de temporada para el día 22 de julio</h2>
+                                <p class="card-comida__text">
+                                    No te pierdas el final de la temporada y apúntate a la comida del club! Buena
+                                    comida, buena comañía y juegos y sorteos!
+                                </p>
+                            </div>
 
-            <div class="window">
-                <div class="window__poster">
-                    <div class="card-inscripciones">
-                        <h2 class="card-inscripciones__title">Inscripciones a la próxima temporada abiertas</h2>
-                        <p class="card-inscripciones__text">
-                            Si te gusta el tenís y eres de la comarca de Al-Gandul ínscribete aquí
-                        </p>
+                            <div class="balls">
+                                <img src="../src/assets/images/balls.png" alt="" />
+                            </div>
+                            <div class="card-subtitle">CLUB DE TENIS AL-GANDUL</div>
+                            <div class="card-button">Apúntate al club</div>
+                        </div>
                     </div>
-                    <div class="card-clases">
-                        <h2 class="card-clases__title">Clases particulares para niños de 8-14 años</h2>
-                    </div>
-                    <div class="card-comida">
-                        <h2 class="card-comida__title">Comida fin de temporada para el día 22 de julio</h2>
-                        <p class="card-comida__text">
-                            No te pierdas el final de la temporada y apúntate a la comida del club! Buena comida, buena
-                            comañía y juegos y sorteos!
-                        </p>
-                    </div>
-
-                    <div class="balls">
-                        <img src="../src/assets/images/balls.png" alt="" />
-                    </div>
-                    <div class="card-title">CLUB DE TENIS AL-GANDUL</div>
-                    <div class="card-button">Apúntate al club</div>
                 </div>
             </div>
         </main>
+
+        <include src="views/footer.html"></include>
     </body>
 </html>
