@@ -151,7 +151,7 @@ main {
 **********************************************/
 .window {
     max-width: 1280px;
-    margin: auto;
+    margin: 40px auto;
     height: calc(
         100vh - 180px
     ); // El 100% del alto de la ventana menos el header y el footer (70px + 10px de margen y 60px + 10px de margen)
@@ -247,7 +247,7 @@ main {
     max-width: 100%;
     min-height: 70px;
     background-color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 .header__content {
     display: flex;
@@ -386,3 +386,73 @@ main {
 }
 
 /************* Fin MOVIL *************/
+/*********************************************
+*          Estilos MEMBERS
+**********************************************/
+
+.page-members {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: $white;
+    height: 100%;
+    padding: 50px;
+}
+.page-members__title {
+    font-size: $h2-size;
+    font-weight: $h1-w;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.galeria {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 60px);
+}
+
+.card__image {
+    width: 100%;
+    height: 300px;
+}
+
+.card__title {
+    font-weight: bold;
+    text-align: center;
+    font-size: $h2-size-tablet;
+    margin: 20px auto 5px;
+}
+
+.card__description {
+    text-align: center;
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    font-size: $p-size;
+}
+
+/*********************************************
+*          Estilos Estilos Movil
+**********************************************/
+@media (max-width: 480px) {
+    .card {
+        width: calc(50% - 5px);
+    }
+    .card__image {
+        height: 175px;
+        width: 100%;
+    }
+    .card__title {
+        font-size: 20px;
+    }
+}
+/************* Fin Estilos Movil *************/
+
+/************* Fin MEMBERS *************/
