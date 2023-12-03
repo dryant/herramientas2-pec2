@@ -1,12 +1,24 @@
 @use "sass:color";
-
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol";
+$h1-f: "Arial Black", "Helvetica Neue";
+$h2-f: "Arial Black", "Helvetica Neue";
+$h1-w: bolder;
+$h2-w: bolder;
+$h1-size: 60px;
+$h1-size-tablet: 45px;
+$h2-size: 38px;
+$h2-size-tablet: 28px;
+$p-size: 18px;
 $font-family-serif: "Georgia", "Times New Roman", serif;
+$font-family-sans: "Helvetica Neue", "Raleway", serif;
+$font-family-header: "Arial Black";
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+$arena: #d0673d;
+$arena-opacity: #d0673d7d;
+$cesped: #507240;
+$cesped-opacity: #5072408f;
+$pista: #0166a4;
+$pista-opacity: rgba(1, 101, 164, 0.5);
+$white: #fff;
+$black: #000;
 
 $mqMinWidth: 420px;

@@ -1,57 +1,388 @@
-* {
-  box-sizing: border-box;
+/*********************************************
+*          Estilos RESET
+**********************************************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/************* Fin RESET *************/
 
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  padding: 2rem;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+    font-family: $font-family-sans;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+main {
+    background-image: url("../images/tenis-pista.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
-
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
-  }
+/*********************************************
+*          Estilos portada
+**********************************************/
+.window {
+    max-width: 1280px;
+    margin: auto;
+    height: calc(
+        100vh - 180px
+    ); // El 100% del alto de la ventana menos el header y el footer (70px + 10px de margen y 60px + 10px de margen)
+}
+.window__poster {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+    height: 100%;
+}
+.card-comida,
+.card-clases,
+.card-inscripciones {
+    padding: 15px;
+    line-height: 2rem;
+    font-size: $p-size;
+}
+.card-title {
+    line-height: 2.5rem;
+    grid-row: 1/2;
+    grid-column: 2/5;
+    font-family: $h1-f;
+    font-weight: $h1-w;
+    font-size: $h1-size;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-inscripciones {
+    background-color: $arena;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.card-comida {
+    background-color: $pista;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.card-clases {
+    background-color: #fff;
+    color: $arena;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.balls {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.card-button {
+    grid-column: 2/4;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $h2-size;
+    color: $arena;
+    font-weight: $h2-w;
+    font-family: $font-family-header;
+}
+.card-inscripciones__title,
+.card-comida__title,
+.card-clases__title {
+    font-size: $h2-size;
+    font-family: $h2-f;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.card-inscripciones__text,
+.card-comida__text,
+.card-clases__text {
+    color: $white;
+}
+.card-inscripciones__title,
+.card-comida__title {
+    color: $white;
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
+/************* Fin portada *************/
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
-  }
+/*********************************************
+*          Estilos Header
+**********************************************/
+.header {
+    max-width: 100%;
+    min-height: 70px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 40px;
+}
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    max-width: 1280px;
+    margin: auto;
+    padding-top: 25px;
+}
+.header__logo {
+    font-size: $h2-size;
+    font-weight: $h1-w;
+    font-family: $font-family-header;
+    font-style: italic;
+    border-bottom: #000 dotted 1px;
+    color: $cesped;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+}
+.header__nav-item,
+.header__nav-item--active {
+    display: inline-block;
+    margin-right: 12px;
+    font-weight: bold;
+}
+.header__nav-item--active {
+    color: $arena;
+    text-decoration: underline;
+}
+.header__logo--span {
+    color: #000;
+}
+/************* Fin Header *************/
+/*********************************************
+*          Estilos TABLET
+**********************************************/
+
+@media (max-width: 980px) {
+    .header__content {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        max-width: 100%;
+        margin: auto;
+        padding: 20px 25px 0;
+    }
+    .window__poster {
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .card-title {
+        grid-row: 1/2;
+        grid-column: 1/5;
+        font-size: $h1-size-tablet;
+        text-align: center;
+    }
+    .card-inscripciones__title,
+    .card-comida__title,
+    .card-clases__title {
+        font-size: $h2-size-tablet;
+        font-family: $h2-f;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    .card-inscripciones {
+        grid-row: 2/4;
+        height: auto;
+    }
+    .card-clases {
+        grid-row: 4/5;
+        grid-column: 3/5;
+    }
+    .card-comida {
+        grid-row: 4/5;
+    }
+    .balls {
+        grid-row: 2/3;
+    }
+    .balls img {
+        max-height: 150px;
+    }
+    .card-button {
+        grid-row: 3/4;
+        grid-column: 2/5;
+    }
 }
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
+/************* Fin TABLET *************/
+/*********************************************
+*          Estilos MOVIL
+**********************************************/
+
+@media (max-width: 480px) {
+    .header__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__nav {
+        padding-bottom: 30px;
+    }
+    .header__content {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        max-width: 100%;
+        margin: auto;
+        padding: 20px 25px 0;
+    }
+    .window__poster {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
+    .card-title {
+        display: none;
+    }
+
+    .card-clases {
+        grid-row: 4/5;
+        grid-column: 3/5;
+    }
+    .card-comida {
+        grid-row: 4/5;
+    }
+    .balls {
+        display: none;
+    }
+    .balls img {
+        max-height: 150px;
+    }
+    .card-button {
+        padding: 25px;
+    }
 }
+
+/************* Fin MOVIL *************/
