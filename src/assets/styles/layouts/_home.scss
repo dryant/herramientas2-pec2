@@ -40,6 +40,14 @@ main {
         display: inline-block;
     }
 }
+div:is([class^="card-"]) h2 {
+    font-size: 22px;
+}
+
+.card :is(h2),
+.card :where(h2) {
+    font-size: 18px;
+}
 .card-comida,
 .card-clases,
 .card-inscripciones {
@@ -184,7 +192,7 @@ main {
         margin: auto;
         padding: 20px 25px 0;
     }
-    .card-title {
+    .card-subtitle {
         grid-row: 1/2;
         grid-column: 1/5;
         font-size: $h1-size-tablet;
@@ -272,6 +280,9 @@ main {
     }
     .card-button {
         padding: 25px;
+    }
+    .card-subtitle {
+        order: -1;
     }
 }
 

@@ -16,6 +16,10 @@
     padding-top: 20px;
     padding-bottom: 40px;
 }
+.page-members__description {
+    margin-bottom: 30px;
+    text-align: center;
+}
 .galeria {
     display: flex;
     gap: 10px;
@@ -50,11 +54,14 @@
     line-height: 1.2;
     font-size: 14px;
 }
+:where(.card) h5 {
+    font-size: 18px;
+}
 
 /*********************************************
 *          Estilos Estilos Movil
 **********************************************/
-@media (max-width: 480px) {
+@media (max-width: 992px) {
     .card {
         width: calc(50% - 5px);
     }
