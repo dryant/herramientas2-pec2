@@ -169,6 +169,11 @@ div:is([class^="card-"]) h2 {
 .header__logo--span {
     color: #000;
 }
+@container (min-width: 768px) {
+    .card-subtitle h2 {
+      color: $arena;
+    }
+  }
 /************* Fin Header *************/
 /*********************************************
 *          Estilos TABLET
